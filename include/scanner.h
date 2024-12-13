@@ -9,7 +9,8 @@
 class Scanner {
 private:
     std::string source_;
-    std::vector<Token> tokens;
+    std::vector<Token> tokens_;
+    static std::unordered_map<std::string, TokenType> keywords_;
     int start_ = 0;
     int current_ = 0;
     int line_ = 1;

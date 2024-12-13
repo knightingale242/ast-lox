@@ -2,6 +2,26 @@
 #include <cctype>
 #include <iostream>
 
+std::unordered_map<std::string, TokenType> Scanner::keywords_ = {
+    {"and", AND},
+    {"class", CLASS},
+    {"else", ELSE},
+    {"false", FALSE},
+    {"for", FOR},
+    {"fun", FUN},
+    {"if", IF},
+    {"nil", NIL},
+    {"or", OR},
+    {"print", PRINT},
+    {"return", RETURN},
+    {"super", SUPER},
+    {"this", THIS},
+    {"true", TRUE},
+    {"var", VAR},
+    {"while", WHILE}
+
+};
+
 Scanner::Scanner(std::string source) : source_(source) {}
 
 bool Scanner::isAtEnd() {
@@ -20,7 +40,7 @@ char Scanner::peekNext() {
 
 void Scanner::addToken(TokenType type, std::any literal) {
     std::string text = source_.substr(start_, current_ - start_);
-    tokens.push_back(Token(type, text, literal, line_));
+    tokens_.push_back(Token(type, text, literal, line_));
 }
 
 void Scanner::addToken(TokenType type) {
@@ -71,7 +91,8 @@ void Scanner::identifier() {
     }
     
     std::string text = source_.substr(start_, current_ - start_);
-    addToken(IDENTIFIER, text);
+    TokenType type = (keywords_.count(text) > 0) ? keywords_[text] : IDENTIFIER; 
+    addToken(type);
 }
 
 void Scanner::number() {
@@ -160,6 +181,6 @@ std::vector<Token> Scanner::scanTokens() {
         scanToken();
     }
 
-    tokens.push_back(Token(EOFT, "", nullptr, line_));
-    return tokens;
+    tokens_.push_back(Token(EOFT, "", nullptr, line_));
+    return tokens_;
 }
