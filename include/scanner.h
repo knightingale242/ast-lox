@@ -1,4 +1,3 @@
-// include/scanner.h
 #ifndef SOUSE_SCANNER_H
 #define SOUSE_SCANNER_H
 
@@ -34,4 +33,4 @@ public:
     std::vector<Token> scanTokens();
 };
 
-#endif // SOUSE_SCANNER_H
+#endif

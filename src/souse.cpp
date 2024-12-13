@@ -1,4 +1,3 @@
-// src/souse.cpp
 #include "../include/souse.h"
 #include "../include/scanner.h"
 #include <iostream>
@@ -10,7 +9,6 @@ void Souse::run(const std::string& source) {
     Scanner scanner(source);
     std::vector<Token> tokens = scanner.scanTokens();
 
-    // Temporarily commented out token printing
     // for (const Token& token : tokens) {
     //     std::cout << token.toString() << std::endl;
     // }

@@ -1,4 +1,3 @@
-// include/token_type.h
 #ifndef SOUSE_TOKEN_TYPE_H
 #define SOUSE_TOKEN_TYPE_H
 
@@ -28,4 +27,4 @@ enum TokenType {
     EOFT
 };
 
-#endif // SOUSE_TOKEN_TYPE_H
+#endif 

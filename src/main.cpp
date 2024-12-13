@@ -1,4 +1,3 @@
-// src/main.cpp
 #include "../include/souse.h"
 #include <iostream>
 

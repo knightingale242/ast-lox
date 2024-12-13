@@ -1,4 +1,3 @@
-// include/token.h
 #ifndef SOUSE_TOKEN_H
 #define SOUSE_TOKEN_H
 
@@ -17,4 +16,4 @@ public:
     std::string toString() const;
 };
 
-#endif // SOUSE_TOKEN_H
+#endif 

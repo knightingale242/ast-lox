@@ -1,4 +1,3 @@
-// include/souse.h
 #ifndef SOUSE_H
 #define SOUSE_H
 
@@ -17,4 +16,4 @@ public:
     void error(int line, const std::string& message);
 };
 
-#endif // SOUSE_H
+#endif 

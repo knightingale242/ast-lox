@@ -1,4 +1,3 @@
-// src/scanner.cpp
 #include "../include/scanner.h"
 #include <cctype>
 #include <iostream>
@@ -132,7 +131,6 @@ void Scanner::scanToken() {
         case ' ':
         case '\r':
         case '\t':
-            // Ignore whitespace
             break;
         
         case '\n':
