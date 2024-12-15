@@ -9,9 +9,9 @@ void Souse::run(const std::string& source) {
     Scanner scanner(source);
     std::vector<Token> tokens = scanner.scanTokens();
 
-    // for (const Token& token : tokens) {
-    //     std::cout << token.toString() << std::endl;
-    // }
+    for (const Token& token : tokens) {
+        std::cout << token.toString() << std::endl;
+    }
 }
 
 void Souse::report(int line, const std::string& where, const std::string& message) {
